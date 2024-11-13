@@ -22,20 +22,19 @@ pipeline
                 }
             }
         }
-    }
-
-    stage('Start application and run tests')
-    {
-        steps
+        stage('Start application and run tests')
         {
-            script
+            steps
             {
-                bat 'npm start &'
-                bat 'wait-on http://localhost:8081'
-                bat 'npm test'
+                script
+                {
+                    bat 'npm start &'
+                    bat 'wait-on http://localhost:8081'
+                    bat 'npm test'
+                }
             }
         }
-    }        
+    }       
     post
     {
         always
