@@ -40,7 +40,7 @@ pipeline
             {
                 script
                 {
-                    bat 'start npm start'                    
+                    bat 'npm test'                    
                 }
             }
         }
